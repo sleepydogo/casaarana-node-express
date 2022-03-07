@@ -1,7 +1,46 @@
+
 {
-    "id":1085351960,
-    "nickname":"TETE6989934",
-    "password":"qatest5073",
-    "site_status":"active",
-    "email":"test_user_45698722@testuser.com"
+    "users" : [
+        {
+            "id":1085351960,
+            "nickname":"TETE6989934",
+            "password":"qatest5073",
+            "site_status":"active",
+            "email":"test_user_45698722@testuser.com",
+            "create": "06-03-2022",
+            "credentials" : {
+                "test" : {
+                    "access_token": "TEST-8473819707556294-030702-5f00251ed58b21e4dd553cbdd7335a12-1085351960",
+                    "public_key" : "TEST-3d725083-a4b7-41fa-8096-08ccfce4df37"
+                },
+                "production" : {
+                    "public_key": "APP_USR-f808c39d-4365-4839-8fbe-789731e22946",
+                    "access_token": "APP_USR-8473819707556294-030702-b361bd1db8400f52c31f90315604fb1b-1085351960",
+                    "client_id": "8473819707556294",
+                    "client_secret": "RsPePPGGCuKAA5N9mcqYD7TKrQOtEbMp"
+                }
+            }
+        },
+        
+        {
+            "id": 1085396902,
+            "nickname": "TESTMIA04IBC",
+            "password": "qatest6014",
+            "site_status": "active",
+            "email": "test_user_22100759@testuser.com",
+            "create": "06-03-2022",
+            "credentials" : {
+                "test" : {
+                    "access_token": "TEST-216903659492431-030703-e703123e28a94f653f57c975e786df30-1085396902",
+                    "public_key" : "TEST-2f57d3a8-6eb8-4e33-a979-3396097bcbfc"
+                },
+                "production" : {
+                    "public_key": "APP_USR-50049889-4e4c-426b-826c-920bed5daada",
+                    "access_token": "APP_USR-216903659492431-030703-54ef13b88ed906bc4bd2310790f453a0-1085396902",
+                    "client_id": "216903659492431",
+                    "client_secret": "goWoL7udbXJZj5TjTw17BmjZAhAPanZP"
+                }
+            }
+        }
+    ]
 }

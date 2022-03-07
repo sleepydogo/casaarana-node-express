@@ -13,45 +13,6 @@ var formulario_register = document.querySelector(".formulario__register");
 var caja_back_login  = document.querySelector(".caja__back-login");
 var caja_back_register = document.querySelector(".caja__back-register");
 
-// Mercado pago
-const mercadopago = new MercadoPago('TEST-27b738ff-ca1a-4485-b310-303bb67791a2', {
-  locale: 'es-AR'
-});
-
-document.getElementById("checkout-btn").addEventListener("click", function() {
-
-  $('#checkout-btn').attr("disabled", true);
-  
-  const orderData = {
-    quantity: 1,
-    description: "Entrada",
-    price: 300
-  };
-    
-  fetch("/create_preference", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-    },
-    body: JSON.stringify(orderData),
-  })
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(preference) {
-        createCheckoutButton(preference.id);
-        
-        $(".shopping-cart").fadeOut(500);
-        setTimeout(() => {
-            $(".container_payment").show(500).fadeIn();
-        }, 500);
-    })
-    .catch(function() {
-        alert("Unexpected error");
-        $('#checkout-btn').attr("disabled", false);
-    });
-});
-
 function register(){
     if (window.innerWidth > 850) {
         formulario_register.style.display = "block";
@@ -99,10 +60,6 @@ function widthPag() {
         formulario_register.style.display = "none";
         contenedor__login_register.style.left = "0px";
     }
-}
-
-function pago(){
-    alert('hola');
 }
 
 widthPag();

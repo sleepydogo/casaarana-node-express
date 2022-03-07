@@ -1,5 +1,6 @@
 
 const express = require('express');
+const bodyParser = require('body-parser');  
 const app = express();
 
 
@@ -7,14 +8,37 @@ const app = express();
 const mercadopago = require("mercadopago");
 // Agrega credenciales
 mercadopago.configure({
-  access_token: "",
+  // Token de vendedor 
+  access_token: "APP_USR-8473819707556294-030702-b361bd1db8400f52c31f90315604fb1b-1085351960"
 });
+
+// middleware
+app.use(bodyParser.urlencoded({ extended: false }))
 
 
 // Rutas 
-
-app.get('/checkout', (req, res) => {
-    res.send('<h1> hola como te vaasfdsd </h1>')
+app.post('/checkout', (req, res) => {
+  // Crea un objeto de preferencia
+  let preference = {
+    items: [
+      {
+        title: "Entrada",
+        unit_price: 300,
+        quantity: 1,
+      },
+    ],
+  };
+  
+  mercadopago.preferences
+    .create(preference)
+    .then(function (response) {
+      console.log(response.body);
+      res.redirect(response.body.init_point);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  
 })
 
 // Server

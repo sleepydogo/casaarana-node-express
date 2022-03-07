@@ -2,10 +2,19 @@
 const express = require('express');
 const app = express();
 
+
+// SDK de Mercado Pago
+const mercadopago = require("mercadopago");
+// Agrega credenciales
+mercadopago.configure({
+  access_token: "",
+});
+
+
 // Rutas 
 
 app.get('/checkout', (req, res) => {
-    res.send('<h1> hola como te vaasfd </h1>')
+    res.send('<h1> hola como te vaasfdsd </h1>')
 })
 
 // Server

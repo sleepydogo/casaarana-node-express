@@ -9,7 +9,7 @@ const mercadopago = require("mercadopago");
 // Agrega credenciales
 mercadopago.configure({
   // Token de vendedor 
-  access_token: "APP_USR-8473819707556294-030702-b361bd1db8400f52c31f90315604fb1b-1085351960"
+  access_token: "APP_USR-216903659492431-030703-54ef13b88ed906bc4bd2310790f453a0-1085396902"
 });
 
 // middleware
@@ -19,15 +19,31 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // Rutas 
 app.post('/checkout', (req, res) => {
   // Crea un objeto de preferencia
-  let preference = {
-    items: [
+  var preference = {}
+  preference = {
+    "items": [
       {
-        title: "Entrada",
-        unit_price: 300,
-        quantity: 1,
-      },
+        "title": "Entrada Cosmica",
+        "currency_id": "ARS",
+        "picture_url": "https://www.mercadopago.com/org-img/MP3/home/logomp3.gif",
+        "description": "Entrada al evento Casa Arana.",
+        "category_id": "entrada",
+        "quantity": 1,
+        "unit_price": 75.76,
+        "picture_url": "https://w7.pngwing.com/pngs/35/742/png-transparent-t-shirt-ape-hoodie-monkey-chimpanzee-t-shirt-fictional-character-glasses-hair.png"
+      }
     ],
-  };
+    "payment_methods": {
+      "excluded_payment_types": [
+        {
+          "id": "ticket"
+        }
+      ],
+      "installments": 1
+	  },
+    "notification_url": "https://hookb.in/9XoX6JGrjBsW1OXXwZKB",
+  }
+
   
   mercadopago.preferences
     .create(preference)

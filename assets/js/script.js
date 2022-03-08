@@ -1,7 +1,6 @@
 
 document.getElementById("btn__registrarse").addEventListener("click", register);
 document.getElementById("btn__iniciar-sesion").addEventListener("click", login);
-document.getElementById("btn__pago").addEventListener("click", pago);
 
 window.addEventListener("resize", widthPag);
 

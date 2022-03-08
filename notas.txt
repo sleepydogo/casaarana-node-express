@@ -1,0 +1,35 @@
+{
+    "name": "casaarana",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "watch": "npx nodemon src/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      // cifra contrase;as
+      "bcrypt-nodejs": "^0.0.3",
+      "body-parser": "^1.19.2",
+      // hace mensajeria entre las paginas 
+      "connect-flash": "^0.1.1",
+      "ejs-mate": "^3.0.0",
+      "express": "^4.17.3",
+      "mercadopago": "^1.5.12",
+      // es un driver para conextar con la BD
+      "mongoose": "^6.2.4",
+      // es para imprimir paquetes http que llegan en consola
+      "morgan": "^1.10.0",
+      // autentica el login
+      "passport": "^0.5.2",
+      //valida desde el lado del servidor
+      "passport-local": "^1.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.15"
+    }
+  }
+  
